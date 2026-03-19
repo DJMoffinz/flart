@@ -1,8 +1,18 @@
-#Copyright (C) 2026 mfnz
+# compiler for flart, a simple domain-specific programming language for
+# describing workflows or processes.
+# Copyright (C) 2026  mfnz
 
-#anyone obtaining a copy of this software has the right to use and modify it, but i (mfnz) reserve all other rights.
+# This program is free software: you can redistribute it and/or modify
+# it under the terms of the GNU General Public License version 3 as
+# published by the Free Software Foundation.
 
-#the above notices shall be retained without modification in all copies of this software.
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+
+# You should have received a copy of the GNU General Public License
+# along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 import graphviz as gv
 
