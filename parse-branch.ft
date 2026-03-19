@@ -1,0 +1,20 @@
+parse branch(tokens, i):
+    branch = {};
+    token = () => tokens[i];
+    order = token is `&`
+          & (`&`,`|`)
+          | (`|`,`&`);
+    collected, i = collect_until(tokens, i+1, order[1]);
+    branch[order[0]] = parser(collected);
+    collected, i = collect_until(tokens, i+1, ("&","|",":"));
+    
+    token in (`&`,`|`) &
+    tmp_branch, i = parse branch(tokens, i);
+    //last collected thing will be the branch condition
+    tmp_condition = collected.pop()
+    branch[order[1]] = parser(collected()).append({tmp_condition: tmp_branch}) |;
+    
+    token in `:` &
+    i-=1; collected.pop()
+    
+    return node type(if, branch), i

@@ -1,0 +1,11 @@
+[project]
+name = "flart"
+version = "0.1.0"
+description = "compiler for flart. see repo for info"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "graphviz>=0.21",
+]
+[project.urls]
+Repository = "https://github.com/DJMoffinz/flart"

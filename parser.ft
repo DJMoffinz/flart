@@ -1,0 +1,37 @@
+//  parser for my language in my language, since it was the easiest way for me to do it
+
+/*  
+    i hope this makes sense. maybe this is how ast normally works but i wouldnt know
+    node = {
+        content //each node in the tree has a content field where the string that the user sees goes
+        type    //then it has the type, which can itself be a node with content and a type - see "if"
+    }
+    node type if = {
+        node type true
+        node type false
+    }
+    node type label
+    node type pass
+    node type call
+*/
+
+parse if(nodes, tokens):
+    node type if;
+    token is "&" & pop token; true content  = parse tokens until next "|" |;
+    token is "|" & pop token; false content = parse tokens until next "&" |;
+    return node;
+
+parse tokens(nodes, tokens):
+    token in "&|" & node = @parse if |
+    token == ":" & node type label; pop token |
+    token == ";" & node type pass; pop token |
+    token == "@" & node type call: pop token |
+    node content = pop token;
+    node content, type & push new node |;
+    token & @parse tokens |;
+    
+/*  
+    most of this code is technically invalid,
+    since the reserved symbols would need escaping (unless i want to make strings a language feature)
+    and comments arent actually a thing in my lexer (i have a working one btw!)
+ */
