@@ -1,8 +1,5 @@
 # flart
-
-flart is a programming language for making flowcharts. it is meant to be extremely concise and targets graphviz DOT. because of it's simplicity, i often use it when writing pseudocode, and in fact it has helped me write this compiler.
-
-other languages that do this are mermaid, whch i didnt know about until after i created flart. mermaid looks annoying to use though, so i'm glad i didn't know about it.
+flart is a programming language for describing workflows or processes. because of its conciceness and flexibility it can be used as is, or compiled to graphviz DOT (when i finish the compiler). i often use it when writing pseudocode, and in fact it has helped me write this compiler.
 
 ## how it works
 flart programs can technically contain anything you like, although certain symbols (`:`, `&`, `|`, `@` and `;`) break them up and make them more useful.
@@ -20,4 +17,4 @@ a `;` means that the previous bit of content, if it exists, is just a bit of con
 body is a list of ordinary bits of content and jumps. if it were defined more rigorously it would be a list of ordinary bits of content that may or may not end in a jump, but it isn't.
 
 ## compiler
-the flart compiler is contained in main.py, which currently is not in a working state and i am not accepting prs. the current licencing is such that prs are not possible, so i do not hope to see any.
+the flart compiler is contained in main.py, which currently is not in a working state. the current licencing is such that prs are not possible, so i do not hope to see any. eventually i hope to be able to do so, and plan to licence the software Freely, but for now i am going to work on it on my own.
