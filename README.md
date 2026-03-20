@@ -8,7 +8,7 @@ anything that is not one of those symbols is **content**. this means that anythi
 
 a `:` means that the previous bit of content is a **label**.
 
-an `&` or a `|` means that the previous bit of content is a **condition**. Anything between that and whichever of those we didn't encounter is **body**, which we'll get to later, as is anything between that and the next label or condition.
+an `&` or a `|` means that the previous bit of content is a **branch condition**. Anything between that and whichever of those we didn't encounter is **body**, which we'll get to later, as is anything between that and the next label or condition. The body following the `&` is the **true** branch, and the body following the `|` is the **false** branch.
 
 an `@` means that the *following* bit of content is a label to jump to. Curently code following this is allowed, but it will never be reached. The compiler will probably warn users about this eventually.
 
