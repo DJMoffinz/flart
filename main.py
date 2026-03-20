@@ -17,15 +17,17 @@
 import graphviz as gv
 
 program = """
-start:
-condition &
-@foo |
-bar; baz & buz |;
+lamp doesnt work:
+  lamp plugged in? |
+  plug in lamp &
+  bulb burnt out? &
+  @replace bulb |
+  repair lamp;
 
-foo:
-hello world;
-
-end:
+replace bulb:
+  remove bulb;
+  dispose of bulb responsibly;
+  install replacement bulb;
 """
 
 print("program:", program, sep="\n")
@@ -60,7 +62,7 @@ def collect_until(tokens, i, stop_tokens):
         collected.append(tokens[i])
         i += 1
     return collected, i
- 
+
 def parser(tokens):
     nodes = {}
     n_content, n_type = False, False
